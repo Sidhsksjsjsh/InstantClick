@@ -56,7 +56,7 @@ while wait() do
     end)
   end
 end)
-
+-- MaxActivationDistance = 1230
 Tab3:CreateToggle("Fire ProximityPrompt", function(value)
 _G.ProximityPrompt = value
 while wait() do
@@ -64,6 +64,31 @@ while wait() do
   dts(workspace,function(v)
       if v:IsA("ProximityPrompt") then
           fireproximityprompt(v)
+        end
+    end)
+  end
+end)
+
+Tab3:CreateToggle("Remove Duraton", function(value)
+_G.ProximityPrompt_Dur = value
+while wait() do
+    if _G.ProximityPrompt_Dur == false then break end
+  dts(workspace,function(v)
+      if v:IsA("ProximityPrompt") then
+          v.HoldDuration = 0
+          v.ActionText = "☠️ PROMPT BUTTON ERROR | HoldDuration has been removed. ☠️"
+        end
+    end)
+  end
+end)
+
+Tab3:CreateToggle("Activation Distance", function(value)
+_G.ProximityPrompt_Dis = value
+while wait() do
+    if _G.ProximityPrompt_Dis == false then break end
+  dts(workspace,function(v)
+      if v:IsA("ProximityPrompt") then
+          v.MaxActivationDistance = 1230
         end
     end)
   end
