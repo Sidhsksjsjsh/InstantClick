@@ -16,11 +16,22 @@ local char = Player.Character
 local humanoid = char.Humanoid
 local root = char.HumanoidRootPart
 local workspace = game:GetService("Workspace")
+local dev = "Rivanda_Cheater"
+
+local function Shoot(array)
+Player.Character.HyperlaserGun.ServerControl:InvokeServer("Click",true,array)
+end   
 
 local function dts(a,func)
 for _,v in pairs(a:GetDescendants()) do
     func(v)
   end
+end
+
+local function getPlayer(func)
+for _,v in pairs(game.Players:GetChildren()) do
+        func(v)
+    end
 end
 
 local function t(a)
@@ -76,7 +87,7 @@ while wait() do
   dts(workspace,function(v)
       if v:IsA("ProximityPrompt") then
           v.HoldDuration = 0
-          v.ActionText = "☠️ PROMPT BUTTON ERROR | HoldDuration has been removed. ☠️"
+          v.ActionText = v.Parent.Name
         end
     end)
   end
@@ -93,3 +104,20 @@ while wait() do
     end)
   end
 end)
+
+
+if Player.Name == dev then
+local Tab4 = Window_1:NewSection("Shoot")
+
+Tab4:CreateToggle("Auto Shoot [laser gun]", function(value)
+_G.ShootLaser = value
+while wait() do
+    if _G.ShootLaser == false then break end
+  getPlayer(function(plr)
+      if plr ~= Player then
+          Shoot(plr.Character.HumanoidRootPart)
+        end
+    end)
+  end
+end)    
+end
