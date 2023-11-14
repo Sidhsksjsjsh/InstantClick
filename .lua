@@ -61,7 +61,7 @@ _G.TouchInterest = value
 while wait() do
     if _G.TouchInterest == false then break end
   dts(workspace,function(v)
-      if v:IsA("TouchInterest") then
+      if v:IsA("TouchInterest") or v:IsA("TouchTransmitter") then
           t(v)
         end
     end)
@@ -105,7 +105,7 @@ while wait() do
   end
 end)
 
-
+--[[
 if Player.Name == dev then
 local Tab4 = Window_1:NewSection("Shoot")
 
@@ -121,3 +121,4 @@ while wait() do
   end
 end)    
 end
+]]
