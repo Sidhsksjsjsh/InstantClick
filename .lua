@@ -118,49 +118,36 @@ local function DescPart(str)
 if anti == true then
     if str.Name:lower() == "acid" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "water" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "kill" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "lava" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "meshpart" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "cube" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "snowball" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "damager" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "ball" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "main" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "union" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "wave" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "laser" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "beamkill" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "spread" then
         str:Destroy()
-        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
+    elseif str.Name:lower() == "activated" then
+        str:Destroy()
     end
   end
 end
