@@ -118,6 +118,8 @@ local function DescPart(str)
         str:Destroy()
     elseif str.Name:lower() == "cube" then
         str:Destroy()
+    elseif str.Name:lower() == "snowball" then
+        str:Destroy()
     end
 end
 
