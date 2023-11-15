@@ -120,6 +120,16 @@ local function DescPart(str)
         str:Destroy()
     elseif str.Name:lower() == "snowball" then
         str:Destroy()
+    elseif str.Name:lower() == "damager" then
+        str:Destroy()
+    elseif str.Name:lower() == "ball" then
+        str:Destroy()
+    elseif str.Name:lower() == "main" then
+        str:Destroy()
+    elseif str.Name:lower() == "union" then
+        str:Destroy()
+    elseif str.Name:lower() == "wave" then
+        str:Destroy()
     end
 end
 
