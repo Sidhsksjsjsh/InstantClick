@@ -105,20 +105,25 @@ while wait() do
   end
 end)
 
---[[
-if Player.Name == dev then
-local Tab4 = Window_1:NewSection("Shoot")
-
-Tab4:CreateToggle("Auto Shoot [laser gun]", function(value)
-_G.ShootLaser = value
-while wait() do
-    if _G.ShootLaser == false then break end
-  getPlayer(function(plr)
-      if plr ~= Player then
-          Shoot(plr.Character.HumanoidRootPart)
-        end
-    end)
-  end
-end)    
+local function DescPart(str)
+    if str.Name:lower() == "acid" then
+        str:Destroy()
+    elseif str.Name:lower() == "water" then
+        str:Destroy()
+    elseif str.Name:lower() == "kill" then
+        str:Destroy()
+    elseif str.Name:lower() == "lava" then
+        str:Destroy()
+    elseif str.Name:lower() == "meshpart" then
+        str:Destroy()
+    elseif str.Name:lower() == "cube" then
+        str:Destroy()
+    end
 end
-]]
+
+if game.PlaceId == 5171093784 then
+local Tab4 = Window_1:NewSection("Dont Press The Button 4")
+Tab4:CreateButton("Anti-Kill Part", function()
+workspace.DescendantAdded:Connect(DescPart)
+end)
+end
