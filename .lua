@@ -19,8 +19,12 @@ local workspace = game:GetService("Workspace")
 local dev = "Rivanda_Cheater"
 
 local function Shoot(array)
-Player.Character.HyperlaserGun.ServerControl:InvokeServer("Click",true,array)
+    char["HyperlaserGun"].ServerControl:InvokeServer("Click",true,array)
 end   
+
+local function Shit(array)
+    char["HyperLazer"].ServerControl:InvokeServer("Click",true,array)
+end
 
 local function dts(a,func)
 for _,v in pairs(a:GetDescendants()) do
@@ -130,6 +134,8 @@ local function DescPart(str)
         str:Destroy()
     elseif str.Name:lower() == "wave" then
         str:Destroy()
+    elseif str.Name:lower() == "laser" then
+        str:Destroy()
     end
 end
 
@@ -137,5 +143,25 @@ if game.PlaceId == 5171093784 then
 local Tab4 = Window_1:NewSection("Dont Press The Button 4")
 Tab4:CreateButton("Anti-Kill Part", function()
 workspace.DescendantAdded:Connect(DescPart)
+end)
+
+Tab4:CreateToggle("Troll (laser gun)", function(value)
+        _G.Asshole = value
+            while wait() do
+                if _G.Asshole == false then break end
+                getPlayer(function(v)
+                        Shit(v.Character.Position)
+                    end)
+            end
+end)
+
+Tab4:CreateToggle("Aimbot (laser gun) (laser tag)", function(value)
+        _G.Aim = value
+            while wait() do
+                if _G.Aim == false then break end
+                getPlayer(function(v)
+                        Shoot(v.Character.Position)
+                    end)
+            end
 end)
 end
