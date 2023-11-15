@@ -18,6 +18,10 @@ local root = char.HumanoidRootPart
 local workspace = game:GetService("Workspace")
 local dev = "Rivanda_Cheater"
 
+local function ntfy(title,text)
+game:GetService("StarterGui"):SetCore("SendNotification",{ Title = title, Text = text, Icon = "rbxassetid://13030062874", Button1 = "", Duration = 5})
+end
+
 local function Shoot(array)
     char["HyperlaserGun"].ServerControl:InvokeServer("Click",true,array)
 end   
@@ -114,42 +118,75 @@ local function DescPart(str)
 if anti == true then
     if str.Name:lower() == "acid" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "water" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "kill" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "lava" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "meshpart" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "cube" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "snowball" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "damager" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "ball" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "main" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "union" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "wave" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     elseif str.Name:lower() == "laser" then
         str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
+    elseif str.Name:lower() == "beamkill" then
+        str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
+    elseif str.Name:lower() == "spread" then
+        str:Destroy()
+        ntfy("Anti-Kill Part Enabled",str.Name:lower() .. " Destroyed!")
     end
   end
 end
 
 workspace.DescendantAdded:Connect(DescPart)
-
+-- Workspace.Coins.SpinningCoin.Coin
 if game.PlaceId == 5171093784 then
 local Tab4 = Window_1:NewSection("Dont Press The Button 4")
 Tab4:CreateToggle("Anti-Kill Part", function(value)
 anti = value
 end)
 
+Tab4:CreateToggle("Collect Coins", function(value)
+_G.Grab = value
+while wait() do
+    if _G.Grab == false then break end
+  dts(workspace,function(v)
+      if v:IsA("TouchInterest") or v:IsA("TouchTransmitter") then
+        if v.Parent.Name == "Coin" then
+          t(v)
+        end
+        end
+    end)
+  end
+end)
+    
 Tab4:CreateToggle("Troll (laser gun)", function(value)
         _G.Asshole = value
             while wait() do
