@@ -17,9 +17,24 @@ local humanoid = char.Humanoid
 local root = char.HumanoidRootPart
 local workspace = game:GetService("Workspace")
 local dev = "Rivanda_Cheater"
+local TweenService = game:GetService("TweenService")
 
 local function ntfy(title,text)
 game:GetService("StarterGui"):SetCore("SendNotification",{ Title = title, Text = text, Icon = "rbxassetid://13030062874", Button1 = "", Duration = 5})
+end
+
+local function anchor(part)
+part.Anchored = true
+end
+
+local function StopTween(part)
+local existingTween = TweenService:GetTweenInfo(part)
+
+if existingTween then
+    existingTween:Cancel()
+else
+    part.Anchored = true
+end
 end
 
 local function Shoot(array)
@@ -158,6 +173,8 @@ if anti == true then
 	str:Destroy()
     elseif str.Name:lower() == "winnerpart" then
 	root.CFrame = CFrame.new(str.Position)
+    elseif str.Name:lower() == "pillar" then
+	StopTween(str)
     end
    end
 end
