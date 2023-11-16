@@ -148,16 +148,33 @@ if anti == true then
         str:Destroy()
     elseif str.Name:lower() == "activated" then
         str:Destroy()
+    elseif str.Name:lower() == "lazer" then
+        str:Destroy()
+    elseif str.Name == "BALL" then
+        str:Destroy()
     end
-  end
+   end
+end
+
+local NoWall = false
+local function InvisWall(v)
+if v:IsA("BasePart") and v.Transparency == 1 and NoWall == true then
+	   v.CanCollide = false
+    end
 end
 
 workspace.DescendantAdded:Connect(DescPart)
+workspace.DescendantAdded:Connect(InvisWall)
+
 -- Workspace.Coins.SpinningCoin.Coin
 if game.PlaceId == 5171093784 then
 local Tab4 = Window_1:NewSection("Dont Press The Button 4")
 Tab4:CreateToggle("Anti-Kill Part", function(value)
 anti = value
+end)
+
+Tab4:CreateToggle("No Invisible Wall", function(value)
+NoWall = value
 end)
 
 Tab4:CreateToggle("Collect Coins", function(value)
