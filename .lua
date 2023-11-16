@@ -152,6 +152,12 @@ if anti == true then
         str:Destroy()
     elseif str.Name == "BALL" then
         str:Destroy()
+    elseif str.Name:lower() == "lightning" then
+	str:Destroy()
+    elseif str.Name:lower() == "lavabrick" then
+	str:Destroy()
+    elseif str.Name:lower() == "winnerpart" then
+	root.CFrame = CFrame.new(str.Position)
     end
    end
 end
@@ -196,7 +202,9 @@ Tab4:CreateToggle("Troll (laser gun)", function(value)
             while wait() do
                 if _G.Asshole == false then break end
                 getPlayer(function(v)
-                        Shit(v.Character.HumanoidRootPart.Position)
+			if v ~= Player then
+                           Shit(v.Character.HumanoidRootPart.Position)
+			end
                     end)
             end
 end)
@@ -206,7 +214,9 @@ Tab4:CreateToggle("Aimbot (laser gun) (laser tag)", function(value)
             while wait() do
                 if _G.Aim == false then break end
                 getPlayer(function(v)
-                        Shoot(v.Character.HumanoidRootPart.Position)
+			if v ~= Player then
+                           Shoot(v.Character.HumanoidRootPart.Position)
+			end
                     end)
             end
 end)
