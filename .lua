@@ -175,6 +175,10 @@ if anti == true then
 	root.CFrame = CFrame.new(str.Position)
     elseif str.Name:lower() == "pillar" then
 	StopTween(str)
+    elseif str.Name:lower() == "mine" then
+	str:Destroy()
+    elseif str.Name:lower() == "usedpresent" then
+	str.CFrame = root.Position
     end
    end
 end
